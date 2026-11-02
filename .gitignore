@@ -1,0 +1,8 @@
+# Source and output binaries are never committed: they carry Nintendo content.
+*.nro
+*.nro.update
+*.nsp
+*.nsz
+
+__pycache__/
+*.pyc
