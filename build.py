@@ -59,8 +59,6 @@ def patch(raw: bytes) -> bytes:
     # 4. Never call the removed upstream repository.
     expect(b, 0x3AD130, b"h", "release url")
     b[0x3AD130] = 0
-    expect(b, 0x5A7A8, bytes.fromhex("e0df40f9"), "url load")
-    b[0x5A7A8:0x5A7AC] = struct.pack("<I", 0xD503201F)  # x0 = xzr -> ""
 
     # 5. Report one version everywhere it is visible.
     expect(b, 0x3ACB30, b"pipensx/1.4.1", "user agent")
@@ -74,7 +72,6 @@ def patch(raw: bytes) -> bytes:
         sys.exit(f"size changed: {len(b)} != {len(raw)}")
     allowed = [(0x03438C, 0x034390), (0x070E18, 0x070E24), (0x0DBE9C, 0x0DBEA0),
                (0x386E70, 0x386E88), (0x3ACB30, 0x3ACB3D), (0x3AD130, 0x3AD131),
-               (0x5A7A8, 0x5A7AC),
                (nacp + 0x3060, nacp + 0x3060 + len(VERSION))]
     for i in range(len(raw)):
         if raw[i] != b[i] and not any(lo <= i < hi for lo, hi in allowed):
