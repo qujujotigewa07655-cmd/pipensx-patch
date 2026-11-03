@@ -14,7 +14,7 @@ AArch64/libnx). Five changes, verified by disassembly of the shipped binary.
 | 4 | `0x3ad130` | first byte of the releases URL cleared | `i3sey/pipensx` is gone; the check only produced `HTTP 404` and DNS timeouts |
 | 5 | `0x3acb30`, NACP `+0x3060` | `pipensx/1.6.3` and `1.6.3` | User-Agent and the displayed version disagreed |
 
-Total: 126 bytes in 19 regions. Icon, NACP body and RomFS are untouched.
+Total: 126 bytes in 18 regions. Icon, NACP body and RomFS are untouched.
 
 ## Build
 
