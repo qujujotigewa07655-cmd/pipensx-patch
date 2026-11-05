@@ -3,6 +3,13 @@
 Byte patches for the pipensx homebrew app store on Nintendo Switch (NRO 1.4.1,
 AArch64/libnx). Five changes, verified by disassembly of the shipped binary.
 
+> Source status: the upstream repository `github.com/i3sey/pipensx` is deleted
+> (404 since early November 2026). A documentation snapshot with repository
+> layout and build instructions survives at `context7.com/i3sey/pipensx`
+> (GPL-3.0), but there is no full source checkout anywhere public. These
+> patches are the only practical way to carry this change forward until a
+> mirror surfaces.
+
 ## What it changes
 
 | # | Site | Change | Why |
